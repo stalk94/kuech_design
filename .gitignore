@@ -1,0 +1,6 @@
+/node_modules/
+.env
+json.sqlite
+/dist/
+/src/image/
+package-lock.json
