@@ -1,22 +1,31 @@
 import React from 'react';
 import { Carousel } from 'primereact/carousel';
+import { Loader, } from "@googlemaps/js-api-loader";
 
 
-async function initMap(element) {
+const loader = new Loader({
+    apiKey: 'AIzaSyA2FhYTZTXadhbwufZfDOOJP2Aq3jfOxMA',
+    version: "weekly"
+});
+async function initMap(element: HTMLElement) {
+    await loader.load();
     const { Map } = await google.maps.importLibrary("maps");
-     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+    const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
     
     const map = new Map(element, {
         center: {lat: 54.10746249313291, lng: 13.026980803494352},
         zoom: 17,
-        mapId: "4504f8b37365c3d0",
+        mapId: "4504f8b37365c3d0"
     });
-    const marker = new AdvancedMarkerElement({map, position: {lat: 54.10746249313291, lng: 13.026980803494352}});
+    const marker = new AdvancedMarkerElement({
+        map: map, 
+        position: {lat: 54.10746249313291, lng: 13.026980803494352},
+    });
 }
 
 
 export default function Base() {
-    const products = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg']
+    const products = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg'];
 
     const productTemplate =(product: string)=> {
         return <img 
@@ -24,8 +33,11 @@ export default function Base() {
             height='200px'
         />
     }
-    React.useEffect(()=> {initMap(document.querySelector('.map'));}, []);
+    React.useEffect(()=> {
+        initMap(document.querySelector('.map'));
+    }, []);
 
+    
     return(
         <>
             <h2 style={{textAlign:'center'}}>

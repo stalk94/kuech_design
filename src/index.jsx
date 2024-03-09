@@ -9,15 +9,10 @@ import { Toast } from 'primereact/toast';
 import Header from "./component/header";
 import Base from "./component/base";
 import Guest from "./component/guest";
-import AddComent from './component/contact';
-import { Kuhen } from './component/gallery';
+import Contact from './component/contact';
+import { Kuhen, Bad } from './component/gallery';
 
 
-const Contact =({useInfo})=> {
-    return(
-        <AddComent useInfo={useInfo} path='laufApiContact'/>
-    );
-}
 const Impresum =()=> {
     return(
         <div style={{marginLeft:'5%'}}>
@@ -70,6 +65,29 @@ const Hersteller =()=> {
         </div>
     );
 }
+const Team =()=> {
+    return(
+        <div style={{marginLeft:'5%', marginBottom:'5%'}}>
+            <h2>Unser Team:</h2>
+            <h3 style={{marginLeft:'2%'}}>
+                Sie benötigen fachkundige Beratung? Dann sind Sie bei uns 
+                genau richtig. 
+                Egal ob Sie Ihre Küche ergänzen wollen, neue 
+                Elektrogeräte benötigen oder eine neue Küche planen. 
+                Wir verfügen über langjährige Erfahrungen im 
+                Küchensegment.
+            </h3>
+            <h3 style={{marginLeft:'2%'}}>
+                Unsere Fachgebiete sind individuelle Planung, Beratung und Montage.
+            </h3>
+            <h3 style={{marginLeft:'2%'}}>
+                Um Wartezeiten zu vermeiden, empfehlen wir Ihnen, einen Termin zu vereinbaren. 
+                So können wir uns genügend Zeit für Sie nehmen und eine intensive Betreuung 
+                gewährleisten.
+            </h3>     
+        </div>
+    );
+}
 
 
 function App() {
@@ -91,9 +109,11 @@ function App() {
         else if(value==='Kontakt') setView(<Contact useInfo={showToast}/>);
         else if(value==='Impressum') setView(<Impresum />);
         else if(value==='Cuhen') setView(<Kuhen />);
+        else if(value==='Bad') setView(<Bad />);
+        else if(value==='Team') setView(<Team />);
         else setView();
     }
-    React.useEffect(()=> setView(<Impresum />), []);
+    React.useEffect(()=> setView(<Base />), []);
 
 
     return(
@@ -105,7 +125,7 @@ function App() {
                 © KÜCHEN DESIGN { new Date().getFullYear() }
             </footer>
         </>
-    )
+    );
 }
 
 

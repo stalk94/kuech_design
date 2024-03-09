@@ -1,13 +1,14 @@
 import React from 'react';
+import { GuestProps } from './type';
 import { BlockUI } from 'primereact/blockui';
 import { Panel } from 'primereact/panel';
-import AddComent from './contact';
+import AddComent from './add_comment_form';
 import { useHookstate } from '@hookstate/core';
 import globalState from '../global.state';
 
 
 
-export default function Header({useInfo}) {
+export default function Guest({useInfo}: GuestProps) {
     const comment = useHookstate(globalState.comment);
 
 
@@ -16,7 +17,9 @@ export default function Header({useInfo}) {
             <div className='guestComments'>
                 <BlockUI blocked={false}>
                     {comment.get().map((elem, index)=> 
-                        <Panel key={index} style={{marginTop:'10px'}}
+                        <Panel 
+                            key={index} 
+                            style={{marginTop:'10px'}}
                             header={
                                 <div style={{display:'flex', flexDirection:'row'}}>
                                     <div>

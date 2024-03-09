@@ -1,17 +1,17 @@
 import React from 'react';
+import { HeaderProps } from './type';
 import { Menubar } from 'primereact/menubar';
-
 
 
 const TextData =()=> {
     return(
         <div style={{position:'absolute', right:'0', color:'#fcfcfcba', marginRight:'2%', textShadow:'#000000d9 2px 3px'}}>
             <div style={{fontSize: '25px'}}>
-                Tribseeser Str. 20a<br />
-                18507 Grimmen<br />
+                <i className="pi pi-map-marker"/> Tribseeser Str. 20a<br />
+                <i className="pi pi-envelope"/> 18507 Grimmen<br />
                 
-                Tel.: 038326 / 53 70 40<br />
-                E-Mail: <br />
+                <i className="pi pi-phone"/> Tel.: 038326 / 53 70 40<br />
+                <i className="pi pi-envelope"/>  E-Mail: <br />
                 ml.kuechendesign@web.de<br />
             </div>
             <div style={{marginTop:'5%', color:'#b9b6b6', fontSize:'17px', textShadow:'#000 2px 3px'}}>
@@ -26,7 +26,7 @@ const TextData =()=> {
 }
 
 
-export default function Header({useView}) {
+export default function Header({useView}: HeaderProps) {
     const data = [{
             label: 'Startseite',
             icon: 'pi pi-fw pi-bars',
