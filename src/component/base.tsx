@@ -1,6 +1,7 @@
 import React from 'react';
 import { Carousel } from 'primereact/carousel';
 import { Loader, } from "@googlemaps/js-api-loader";
+import Team from "./team";
 
 
 const loader = new Loader({
@@ -50,18 +51,17 @@ export default function Base() {
             </h4>
             <Carousel 
                 circular={true}
-                autoplayInterval={3000}
+                autoplayInterval={5000}
                 numVisible={3} 
                 numScroll={1}
                 value={products} 
                 itemTemplate={productTemplate}
             />
+            <hr style={{marginTop:'10px'}}/>
+            <Team />
             <div className='mapContainer'>
                 <h2 style={{textAlign:'center'}}>Wo sind wir ansässig 🗺️</h2>
-                <div className='map' 
-                    style={{width:'50%', height:'50%', marginLeft:'auto', marginRight:'auto'}}
-                >
-                </div>
+                <div className='map'></div>
             </div>
         </>
     );

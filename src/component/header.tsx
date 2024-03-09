@@ -18,7 +18,7 @@ const TextData =()=> {
                 Öffnungszeiten:<br />
         
                 Montag - Freitag:<br />
-                10:00 - 18:00 Uhr<br />
+                <i className="pi pi-stopwatch"/> 10:00 - 18:00 Uhr<br />
                 Sa.: nach Vereinbarung
             </div>
         </div>
@@ -82,6 +82,7 @@ export default function Header({useView}: HeaderProps) {
                 <img 
                     style={{height:'300px', width: '100%'}}
                     src='../image/logo3.jpg'
+                    alt="KÜCHEN DESIGN"
                 />
             </div>
             <Menubar model={data}/>

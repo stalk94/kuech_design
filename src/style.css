@@ -20,6 +20,8 @@
     border-top: 1px solid black;
 }
 
+
+
 .guest {
    
 }
@@ -47,4 +49,11 @@
     margin-right: 10px;
     border-radius: 10px;
     border: 1px solid gray;
+}
+.map {
+    width: 50%;
+    height: 50%; 
+    max-height: 300px;
+    margin-left: auto; 
+    margin-right: auto;
 }

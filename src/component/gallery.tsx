@@ -8,11 +8,12 @@ export function Kuhen() {
     const bauForMat = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg'];
     const burgerLandHaus = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg'];
 
-    const productTemplate =(product: string)=> (
+    const productTemplate =(product: string, name: string)=> (
         <div className='cart'>
             <img
                 src={product}
                 height='200px'
+                alt={name}
             />
         </div>
     );
@@ -26,7 +27,7 @@ export function Kuhen() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={farbtausch} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo farbtausch')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -35,7 +36,7 @@ export function Kuhen() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={burger} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo burger')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -44,7 +45,7 @@ export function Kuhen() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={bauForMat} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo bau for mat')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -53,7 +54,7 @@ export function Kuhen() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={burgerLandHaus} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo landhaus')}
                 />
             </div>
         </>
@@ -66,11 +67,12 @@ export function Bad() {
     const bauForMat = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg'];
     const burgerLandHaus = ['../image/1.jpg', '../image/6.jpg', '../image/3.jpg', '../image/5.jpg', '../image/4.jpg'];
 
-    const productTemplate =(product: string)=> (
+    const productTemplate =(product: string, name: string)=> (
         <div className='cart'>
             <img
                 src={product}
                 height='200px'
+                alt={name}
             />
         </div>
     );
@@ -84,7 +86,7 @@ export function Bad() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={farbtausch} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo farbtausch')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -93,7 +95,7 @@ export function Bad() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={burger} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo burger')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -102,7 +104,7 @@ export function Bad() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={bauForMat} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo bau for mat')}
                 />
             </div>
             <div style={{backgroundColor:'#0000001a'}}>
@@ -111,7 +113,7 @@ export function Bad() {
                 </h3>
                 <Carousel numVisible={4} numScroll={1}
                     value={burgerLandHaus} 
-                    itemTemplate={productTemplate}
+                    itemTemplate={(product)=> productTemplate(product, 'photo landhaus')}
                 />
             </div>
         </>
